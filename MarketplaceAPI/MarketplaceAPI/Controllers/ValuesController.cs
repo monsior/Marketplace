@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using MarketplaceAPI.Data;
 using MarketplaceAPI.Models;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MarketplaceAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors]
@@ -33,6 +35,7 @@ namespace MarketplaceAPI.Controllers
         }
 
         // GET api/values/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
