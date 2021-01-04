@@ -15,11 +15,15 @@ export class NavbarComponent implements OnInit {
   }
 
   login(){
-    this.authService.login(this.model).subscribe(next => {
-      console.log('Logged in');
-    }, error => {
-      console.log('Login error');
-    })
+    this.authService.login(this.model).subscribe();
+  }
+
+  logout(){
+    this.authService.logout();
+  }
+
+  isLogged(){
+    return this.authService.isLogged();
   }
 
 }

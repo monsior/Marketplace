@@ -73,7 +73,7 @@ namespace MarketplaceAPI
                 .WithOrigins("http://localhost:4200")
                 .AllowAnyMethod()
                 .AllowCredentials()
-                .WithHeaders("Accept", "Content-Type", "Origin", "X-My-Header"));
+                .AllowAnyHeader());
 
             app.UseAuthentication();
 
