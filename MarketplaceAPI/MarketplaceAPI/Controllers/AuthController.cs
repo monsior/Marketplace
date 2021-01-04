@@ -1,6 +1,7 @@
 ﻿using MarketplaceAPI.Data;
 using MarketplaceAPI.Dtos;
 using MarketplaceAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -45,6 +46,7 @@ namespace MarketplaceAPI.Controllers
             return StatusCode(201);
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {

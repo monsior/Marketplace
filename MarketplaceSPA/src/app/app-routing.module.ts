@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ValueComponent } from './value/value.component';
+import { ValueComponent } from './components/value/value.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' }, 
