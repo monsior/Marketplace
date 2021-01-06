@@ -41,6 +41,8 @@ namespace MarketplaceAPI
                 options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
             services.AddCors();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IAuctionsRepository, AuctionsRepository>();
+            services.AddScoped<ICategoriesRepository, CategoriesRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {

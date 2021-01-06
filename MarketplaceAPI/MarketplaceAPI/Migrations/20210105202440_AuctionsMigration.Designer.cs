@@ -4,14 +4,16 @@ using MarketplaceAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MarketplaceAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210105202440_AuctionsMigration")]
+    partial class AuctionsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +49,7 @@ namespace MarketplaceAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Auctions");
+                    b.ToTable("Auction");
                 });
 
             modelBuilder.Entity("MarketplaceAPI.Models.Category", b =>
@@ -62,7 +64,7 @@ namespace MarketplaceAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("MarketplaceAPI.Models.Photo", b =>
@@ -82,7 +84,7 @@ namespace MarketplaceAPI.Migrations
 
                     b.HasIndex("AuctionId");
 
-                    b.ToTable("Photos");
+                    b.ToTable("Photo");
                 });
 
             modelBuilder.Entity("MarketplaceAPI.Models.User", b =>
