@@ -1,4 +1,5 @@
 using MarketplaceAPI.Data;
+using MarketplaceAPI.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -43,6 +44,7 @@ namespace MarketplaceAPI
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IAuctionsRepository, AuctionsRepository>();
             services.AddScoped<ICategoriesRepository, CategoriesRepository>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {

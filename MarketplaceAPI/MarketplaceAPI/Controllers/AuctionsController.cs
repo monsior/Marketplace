@@ -16,17 +16,12 @@ namespace MarketplaceAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors]
-    public class AuctionsController : ControllerBase
+    public class AuctionsController : BaseController<Auction, IAuctionsRepository>
     {
-        private readonly IAuctionsRepository _repository;
-
-        public AuctionsController(IAuctionsRepository repository)
-        {
-            _repository = repository;
-        }
+        public AuctionsController(IAuctionsRepository repository) : base(repository){}
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddAuction(AuctionToAddDto auctionToAddDto)
+        public async Task<IActionResult> Add(AuctionToAddDto auctionToAddDto)
         {
             var auctionToCreate = new Auction()
             {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MarketplaceAPI.Models
 {
-    public class Auction
+    public class Auction : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

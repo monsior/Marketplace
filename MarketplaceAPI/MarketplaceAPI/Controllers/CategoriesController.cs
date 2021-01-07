@@ -11,21 +11,8 @@ namespace MarketplaceAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class CategoriesController : BaseController<Category, ICategoriesRepository>
     {
-        private readonly ICategoriesRepository _repository;
-
-        public CategoriesController(ICategoriesRepository repository)
-        {
-            _repository = repository;
-        }
-
-        [HttpPost("add")]
-        public async Task<IActionResult> AddCategory(Category category)
-        {
-            await _repository.Add(category);
-
-            return Ok(category);
-        }
+        public CategoriesController(ICategoriesRepository repository) : base(repository){}
     }
 }

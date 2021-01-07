@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MarketplaceAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MarketplaceAPI.Data
 {
-    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
     {
         protected readonly AppDbContext _context;
 
@@ -16,7 +17,7 @@ namespace MarketplaceAPI.Data
 
         public async Task<T> Add(T entity)
         {
-            _context.Add<T>(entity);
+            _context.Set<T>().Add(entity);
             await _context.SaveChangesAsync();
             return entity;
         }
