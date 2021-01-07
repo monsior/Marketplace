@@ -44,7 +44,7 @@ namespace MarketplaceAPI.Controllers
         }
 
         // POST: api/[controller]
-        [HttpPost("add")]
+        [HttpPost]
         public async Task<IActionResult> Add(TEntity entity)
         {
             await _repository.Add(entity);

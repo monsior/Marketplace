@@ -20,7 +20,7 @@ namespace MarketplaceAPI.Controllers
     {
         public AuctionsController(IAuctionsRepository repository) : base(repository){}
 
-        [HttpPost("add")]
+        [HttpPost]
         public async Task<IActionResult> Add(AuctionToAddDto auctionToAddDto)
         {
             var auctionToCreate = new Auction()

@@ -1,4 +1,5 @@
 ﻿using MarketplaceAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +23,14 @@ namespace MarketplaceAPI.Data
             return entity;
         }
 
-        public Task<T> Get(int id)
+        public async Task<T> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        public Task<IEnumerable<T>> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().ToListAsync();
         }
     }
 }
