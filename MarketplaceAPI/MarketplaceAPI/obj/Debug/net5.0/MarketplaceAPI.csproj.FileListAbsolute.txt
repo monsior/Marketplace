@@ -19,7 +19,6 @@ C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\Marketpl
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\obj\Debug\net5.0\MarketplaceAPI.csprojAssemblyReference.cache
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\obj\Debug\net5.0\MarketplaceAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\obj\Debug\net5.0\MarketplaceAPI.AssemblyInfoInputs.cache
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\obj\Debug\net5.0\MarketplaceAPI.AssemblyInfo.cs
@@ -156,3 +155,11 @@ C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\Marketpl
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\MarketplaceAPI.Views.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\xunit.abstractions.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\xunit.assert.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\xunit.core.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\xunit.execution.dotnet.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\Xunit.DependencyInjection.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\obj\Debug\net5.0\MarketplaceAPI.csprojAssemblyReference.cache
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceAPI\bin\Debug\net5.0\Moq.dll
