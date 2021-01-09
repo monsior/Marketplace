@@ -21,14 +21,14 @@ namespace MarketplaceAPI.Controllers
         public AuctionsController(IAuctionsRepository repository) : base(repository){}
 
         [HttpPost]
-        public async Task<IActionResult> Add(AuctionToAddDto auctionToAddDto)
+        public override async Task<IActionResult> Add(Auction auction)
         {
             var auctionToCreate = new Auction()
             {
-                Name = auctionToAddDto.Name,
+                Name = auction.Name,
                 AddDate = DateTime.Now,
-                CategoryId = auctionToAddDto.CategoryId,
-                Description = auctionToAddDto.Description
+                CategoryId = auction.CategoryId,
+                Description = auction.Description
             };
 
             await _repository.Add(auctionToCreate);

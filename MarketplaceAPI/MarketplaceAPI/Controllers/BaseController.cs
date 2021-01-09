@@ -1,5 +1,7 @@
 ﻿using MarketplaceAPI.Data;
 using MarketplaceAPI.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace MarketplaceAPI.Controllers
 {
+    [Authorize]
+    [EnableCors]
     [Route("api/[controller]")]
     [ApiController]
     public abstract class BaseController<TEntity, TRepository> : ControllerBase
@@ -24,6 +28,7 @@ namespace MarketplaceAPI.Controllers
 
         // GET: api/[controller]
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<TEntity>>> Get()
         {
             return Ok(await _repository.GetAll());
@@ -31,6 +36,7 @@ namespace MarketplaceAPI.Controllers
 
         // GET: api/[controller]/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<TEntity>> Get(int id)
         {
             var entity = await _repository.Get(id);
@@ -45,7 +51,7 @@ namespace MarketplaceAPI.Controllers
 
         // POST: api/[controller]
         [HttpPost]
-        public async Task<IActionResult> Add(TEntity entity)
+        public virtual async Task<IActionResult> Add(TEntity entity)
         {
             await _repository.Add(entity);
             return Ok(entity);

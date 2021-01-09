@@ -1,0 +1,19 @@
+<div id="auction-form">
+    <form (ngSubmit)="addAuction(auction)" #loginForm="ngForm">
+        <div class="form-group">
+            <label for="name">Auction name</label>
+            <input [(ngModel)]="auction.name" required name="name" id="name" type="text" class="form-control" placeholder="Auction name">
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select [(ngModel)]="auction.categoryId" required name="category" id=category class="form-control">
+                <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea [(ngModel)]="auction.description" name="description" id="description" class="form-control" rows="3"></textarea>
+        </div>
+        <button type="submit" [disabled]="loginForm.form.invalid" class="btn btn-primary">Submit</button>
+    </form>
+</div>

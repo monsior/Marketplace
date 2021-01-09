@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "9h2lKRSDH7YSG7V8T+Mn9TeOB+ebDEsDmlHtcyzciz/0kgeVUWWVMSwnzCbJp7pUqNU4tKUo5GRGSXPJHSh6wQ==",
+  "dgSpecHash": "dzF57UMdLamY0UTAeYklNtzj7Mwa6rIVygzAmsYODI6kMLJsSHK/jR8HGLxA9WC061Ed+3TC36bYYjAvnYSoXg==",
   "success": true,
   "projectFilePath": "C:\\Users\\monsi\\OneDrive\\Pulpit\\Programowanie\\Marketplace\\MarketplaceAPI\\MarketplaceTests\\MarketplaceTests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\monsi\\.nuget\\packages\\autofixture\\4.15.0\\autofixture.4.15.0.nupkg.sha512",
+    "C:\\Users\\monsi\\.nuget\\packages\\autofixture.xunit2\\4.15.0\\autofixture.xunit2.4.15.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
+    "C:\\Users\\monsi\\.nuget\\packages\\fare\\2.1.1\\fare.2.1.1.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.1\\microsoft.aspnetcore.authentication.jwtbearer.5.0.1.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.1\\microsoft.aspnetcore.authentication.openidconnect.5.0.1.nupkg.sha512",

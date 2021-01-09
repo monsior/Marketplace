@@ -1,4 +1,5 @@
-﻿using MarketplaceAPI.Controllers;
+﻿using AutoFixture.Xunit2;
+using MarketplaceAPI.Controllers;
 using MarketplaceAPI.Data;
 using MarketplaceAPI.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -26,10 +27,13 @@ namespace MarketplaceTests
             _controller = new CategoriesController(_categoryMock.Object);
         }
 
-        [Fact]
-        public async Task Add_Should_Return_Ok()
+        [Theory, AutoData]
+        public async Task Add_Should_Return_Ok(string expectedName)
         {
-            Category category = new Category();
+            Category category = new Category()
+            {
+                Name = expectedName
+            };
 
             var response = await _controller.Add(category);
 
