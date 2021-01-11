@@ -13,4 +13,8 @@ export class AuctionService {
   addAuction(auction: any) {
     return this.http.post(this.baseUrl, auction);
   }
+
+  getAuctionByCategory(categoryId: number) {
+    return this.http.get(this.baseUrl + `category/${categoryId}`);
+  }
 }

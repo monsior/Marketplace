@@ -4,11 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ValueComponent } from './components/value/value.component';
 import { AddAuctionComponent } from './components/add-auction/add-auction.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { AuctionsFromCategoryComponent } from './components/auctions-from-category/auctions-from-category.component';
 
 const routes: Routes = [
   { path: '', component: CategoriesComponent }, 
   { path: 'values', component: ValueComponent },
-  { path: 'add-auction', component: AddAuctionComponent}
+  { path: 'add-auction', component: AddAuctionComponent},
+  { path: 'auctions/category/:id', component: AuctionsFromCategoryComponent}
 ];
 
 

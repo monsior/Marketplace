@@ -1,5 +1,5 @@
 <p>categories works!</p>
 
 <p *ngFor="let category of categories">
-    {{category.id}}: {{category.name}}
+    <a [routerLink]="['auctions/category/', category.id]">{{category.id}}: {{category.name}}</a>
 </p>
