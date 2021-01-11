@@ -35,5 +35,11 @@ namespace MarketplaceAPI.Controllers
 
             return Ok(auctionToCreate);
         }
+
+        [HttpGet("category/{categoryId}")]
+        public async Task<IActionResult> GetByCategory(int categoryId)
+        {
+            return Ok(await _repository.GetByCategory(categoryId));
+        }
     }
 }

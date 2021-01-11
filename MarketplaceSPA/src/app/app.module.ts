@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AddAuctionComponent } from './components/add-auction/add-auction.component';
+import { AuctionsFromCategoryComponent } from './components/auctions-from-category/auctions-from-category.component';
 
 export function tokenGetter(){
   return localStorage.getItem('token');
@@ -21,7 +22,8 @@ export function tokenGetter(){
     ValueComponent,
     NavbarComponent,
     CategoriesComponent,
-    AddAuctionComponent
+    AddAuctionComponent,
+    AuctionsFromCategoryComponent
   ],
   imports: [
     BrowserModule,

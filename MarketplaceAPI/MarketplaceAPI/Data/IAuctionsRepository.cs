@@ -8,6 +8,6 @@ namespace MarketplaceAPI.Data
 {
     public interface IAuctionsRepository : IBaseRepository<Auction>
     {
-        Task<IEnumerable<Auction>> GetByCategory(Category category);
+        Task<IEnumerable<Auction>> GetByCategory(int categoryId);
     }
 }

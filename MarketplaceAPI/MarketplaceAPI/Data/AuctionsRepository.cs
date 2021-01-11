@@ -11,9 +11,9 @@ namespace MarketplaceAPI.Data
     {
         public AuctionsRepository(AppDbContext context) : base(context){}
 
-        public async Task<IEnumerable<Auction>> GetByCategory(Category category)
+        public async Task<IEnumerable<Auction>> GetByCategory(int categoryId)
         {
-            var auctions = await _context.Auctions.Where(a => a.Category == category).ToListAsync();
+            var auctions = await _context.Auctions.Where(a => a.Category.Id == categoryId).ToListAsync();
 
             return auctions;
         }
