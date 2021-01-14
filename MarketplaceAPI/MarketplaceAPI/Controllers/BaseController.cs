@@ -49,12 +49,5 @@ namespace MarketplaceAPI.Controllers
             return Ok(entity);
         }
 
-        // POST: api/[controller]
-        [HttpPost]
-        public virtual async Task<IActionResult> Add(TEntity entity)
-        {
-            await _repository.Add(entity);
-            return Ok(entity);
-        }
     }
 }
