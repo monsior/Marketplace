@@ -23,7 +23,7 @@ export function tokenGetter(){
     NavbarComponent,
     CategoriesComponent,
     AddAuctionComponent,
-    AuctionsFromCategoryComponent
+    AuctionsFromCategoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,9 @@ namespace MarketplaceAPI.Controllers
     [EnableCors]
     public class AuctionsController : BaseController<Auction, IAuctionsRepository>
     {
-        public AuctionsController(IAuctionsRepository repository) : base(repository){}
+        private readonly PhotosRepository _photosRepository;
+
+        public AuctionsController(IAuctionsRepository auctionsRepository) : base(auctionsRepository) {}
 
         [HttpPost]
         public async Task<IActionResult> Add(AuctionForAddDto auctionForAdd)
@@ -28,7 +30,7 @@ namespace MarketplaceAPI.Controllers
                 Name = auctionForAdd.Name,
                 AddDate = auctionForAdd.AddDate,
                 CategoryId = auctionForAdd.CategoryId,
-                Description = auctionForAdd.Description
+                Description = auctionForAdd.Description,
             };
 
             await _repository.Add(createdAuction);

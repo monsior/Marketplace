@@ -9,6 +9,6 @@ namespace MarketplaceAPI.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Auction> Auctions { get; set; }
+        public virtual ICollection<Auction> Auctions { get; set; }
     }
 }

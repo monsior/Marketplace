@@ -12,5 +12,6 @@ namespace MarketplaceAPI.Data
         Task<T> Get(int id);
         Task<IEnumerable<T>> GetAll();
         Task<User> GetUser(int id);
+        Task<bool> SaveAll();
     }
 }

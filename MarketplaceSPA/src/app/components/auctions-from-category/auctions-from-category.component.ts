@@ -23,4 +23,5 @@ export class AuctionsFromCategoryComponent implements OnInit {
   getAuctionsByCategory(categoryId: number) {
     this.auctionService.getAuctionByCategory(categoryId).subscribe(response => this.auctions = response);
   }
+
 }

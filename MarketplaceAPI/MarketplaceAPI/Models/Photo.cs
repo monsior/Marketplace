@@ -11,6 +11,6 @@ namespace MarketplaceAPI.Models
         public string PublicId { get; set; }
         public string Url { get; set; }
         public int AuctionId { get; set; }
-        public Auction Auction { get; set; }
+        public virtual Auction Auction { get; set; }
     }
 }

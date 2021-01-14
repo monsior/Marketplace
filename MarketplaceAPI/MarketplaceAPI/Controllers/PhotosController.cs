@@ -73,14 +73,24 @@ namespace MarketplaceAPI.Controllers
                 Url = photoForAdd.Url,
             };
 
-            if(auction.Photos == null)
+            if (auction.Photos == null)
             {
                 auction.Photos = new List<Photo>();
+                
             }
-
+            auction.Photos.Add(photo);
+            
             await _photosRepository.Add(photo);
 
             return Ok();
+        }
+
+        [HttpGet("1")]
+        public async Task<string> GetFirstPhoto(int auctionId)
+        {
+            var photo = await _photosRepository.GetFirstPhoto(auctionId);
+
+            return photo.Url;
         }
 
     }

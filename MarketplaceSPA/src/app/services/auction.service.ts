@@ -17,4 +17,5 @@ export class AuctionService {
   getAuctionByCategory(categoryId: number) {
     return this.http.get(this.baseUrl + `category/${categoryId}`);
   }
+
 }

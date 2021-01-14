@@ -8,5 +8,6 @@ namespace MarketplaceAPI.Data
 {
     public interface IPhotosRepository : IBaseRepository<Photo>
     {
+        Task<Photo> GetFirstPhoto(int auctionId);
     }
 }
