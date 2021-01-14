@@ -32,5 +32,12 @@ namespace MarketplaceAPI.Data
         {
             return await _context.Set<T>().ToListAsync();
         }
+
+        public async Task<User> GetUser(int id)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+
+            return user;
+        }
     }
 }

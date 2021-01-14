@@ -27,17 +27,17 @@ namespace MarketplaceTests
             _controller = new CategoriesController(_categoryMock.Object);
         }
 
-        [Theory, AutoData]
-        public async Task Add_Should_Return_Ok(string expectedName)
-        {
-            Category category = new Category()
-            {
-                Name = expectedName
-            };
+        //[Theory, AutoData]
+        //public async Task Add_Should_Return_Ok(string expectedName)
+        //{
+        //    Category category = new Category()
+        //    {
+        //        Name = expectedName
+        //    };
 
-            var response = await _controller.Add(category);
+        //    var response = await _controller.Add(category);
 
-            Assert.IsType<OkObjectResult>(response);
-        }
+        //    Assert.IsType<OkObjectResult>(response);
+        //}
     }
 }

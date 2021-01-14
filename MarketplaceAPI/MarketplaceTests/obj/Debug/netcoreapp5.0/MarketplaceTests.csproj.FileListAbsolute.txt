@@ -241,3 +241,4 @@ C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\Marketpl
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\AutoFixture.dll
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\AutoFixture.Xunit2.dll
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\Fare.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\CloudinaryDotNet.dll
