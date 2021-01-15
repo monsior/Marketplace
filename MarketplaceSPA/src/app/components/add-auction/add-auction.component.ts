@@ -14,8 +14,16 @@ export class AddAuctionComponent implements OnInit {
   auction: Auction = {
     name: '',
     categoryId: null,
-    description: ''
+    description: '',
+    price: null,
+    city: ''
   };
+  photo: File = null;
+  auctionId: number;
+
+  onFileSelected(event) {
+    this.photo = event.target.files[0];
+  }
 
   constructor(
     private categoryService: CategoryService, 
@@ -27,12 +35,27 @@ export class AddAuctionComponent implements OnInit {
     this.getCategories()
   }
 
+  onSubmit(){    
+    this.addAuction(this.auction);
+  }
+
   getCategories(){
     this.categoryService.getCategories().subscribe(response => this.categories = response);
   }
   
   addAuction(auction: Auction){
     this.auctionService.addAuction(auction)
-      .subscribe(() => this.router.navigate(['']));;
+      .subscribe(response => {
+        const formData = new FormData();
+        formData.append('File', this.photo);
+        this.addPhoto(formData, response['id']);
+        this.router.navigate(['']);
+      });
+    
+  }
+
+  addPhoto(formData: FormData, auctionId: number){
+    this.auctionService.addPhoto(formData, auctionId)
+      .subscribe();
   }
 }

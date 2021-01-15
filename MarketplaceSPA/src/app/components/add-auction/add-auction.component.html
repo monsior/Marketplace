@@ -1,8 +1,12 @@
 <div id="auction-form">
-    <form (ngSubmit)="addAuction(auction)" #loginForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <div class="form-group">
             <label for="name">Auction name</label>
             <input [(ngModel)]="auction.name" required name="name" id="name" type="text" class="form-control" placeholder="Auction name">
+        </div>
+        <div class="form-group">
+            <label for="name">City</label>
+            <input [(ngModel)]="auction.city" required name="city" id="city" type="text" class="form-control" placeholder="City">
         </div>
         <div class="form-group">
             <label for="category">Category</label>
@@ -11,8 +15,16 @@
             </select>
         </div>
         <div class="form-group">
+            <label for="price">Price</label>
+            <input [(ngModel)]="auction.price" min="0" required name="price" id="price" type="number" class="form-control" placeholder="Price">
+        </div>
+        <div class="form-group">
             <label for="description">Description</label>
             <textarea [(ngModel)]="auction.description" name="description" id="description" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="photo">Select image:</label><br>
+            <input (change)="onFileSelected($event)" type="file" id="photo" name="photo" accept="image/*" required>
         </div>
         <button type="submit" [disabled]="loginForm.form.invalid" class="btn btn-primary">Submit</button>
     </form>

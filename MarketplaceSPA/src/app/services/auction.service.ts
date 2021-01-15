@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -16,6 +16,10 @@ export class AuctionService {
 
   getAuctionByCategory(categoryId: number) {
     return this.http.get(this.baseUrl + `category/${categoryId}`);
+  }
+
+  addPhoto(photo: FormData, auctionId: number) {
+    return this.http.post(this.baseUrl + `${auctionId}/photos`, photo); 
   }
 
 }
