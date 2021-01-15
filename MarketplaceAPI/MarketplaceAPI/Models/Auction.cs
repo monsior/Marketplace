@@ -25,6 +25,8 @@ namespace MarketplaceAPI.Models
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public string Description { get; set; }
+        public string City { get; set; }
+        public string Price { get; set; }
         private List<Photo> _photos;
         public virtual List<Photo> Photos
         {

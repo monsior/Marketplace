@@ -11,7 +11,10 @@ export class AuctionsFromCategoryComponent implements OnInit {
   id: number;
   auctions: any;
 
-  constructor(private auctionService: AuctionService, private route: ActivatedRoute) { }
+  constructor(
+    private auctionService: AuctionService, 
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

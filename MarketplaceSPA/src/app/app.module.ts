@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DatePipe } from '@angular/common'
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './components/value/value.component';
@@ -38,7 +39,7 @@ export function tokenGetter(){
       }
     })
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

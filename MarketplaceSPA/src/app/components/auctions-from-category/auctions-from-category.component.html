@@ -1,5 +1,26 @@
-<p>auctions-from-category works!</p>
+<h1>Auctions</h1>
 
 <div class="auction" *ngFor="let auction of auctions">
-    <img src={{auction.photos[0].url}} width="150"> {{auction.id}}: {{auction.name}}
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td width="150" rowspan=2>
+                    <img src={{auction.photos[0].url}} width="150" class="">
+                </td>
+                <td valign="top" class="auction-name">
+                    {{auction.name}}
+                </td>
+                <td class="text-right auction-price" valign="top">
+                    {{auction.price}} zł
+                </td>
+            </tr>
+            <tr>
+                <td valign="bottom" class="auction-details">
+                    {{auction.city}} - {{auction.addDate | date: 'dd.MM'}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+       
+    
 </div>
