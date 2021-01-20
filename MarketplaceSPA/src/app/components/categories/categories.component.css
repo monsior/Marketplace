@@ -1,0 +1,42 @@
+.container {
+    display: block;
+    justify-content: center;
+    align-items: center; 
+    width: 80%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center;
+}
+
+.category {
+    display: inline-block;
+    margin: 30px 40px 40px 20px;
+    width: 100px;
+}
+
+.category-name {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.category-name:hover {
+    background-color: black;
+    color: white;
+}
+
+.category-img-circle {
+    background-color: lightskyblue;
+    padding: 15px;
+    display: block;
+    height: 5em;
+    width: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid;
+    border-radius: 50%;
+}
+
+.category-img {
+    display: block;
+}
