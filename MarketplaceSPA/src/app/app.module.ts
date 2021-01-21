@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common'
 
 import { AppComponent } from './app.component';
-import { ValueComponent } from './components/value/value.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -21,7 +20,6 @@ export function tokenGetter(){
 @NgModule({
   declarations: [
     AppComponent,
-    ValueComponent,
     NavbarComponent,
     CategoriesComponent,
     AddAuctionComponent,

@@ -1,23 +1,20 @@
-<div class="auction-img">
+<div class="auction">
     <img src={{auction.photos[0].url}}>
-</div>
-
-<div class=right-column>
     <div class="auction-details">
-        <h1>{{auction.name}}</h1>
-        <h2>{{auction.price}} zł</h2>
-    </div>
-    <div class="user-details">
-        <p style="font-weight: bold;">User details:</p>
-        <p>{{auction.user.username}}</p>
+        <h1>{{auction.name}}</h1>   
+        <p>{{auction.price}} zł</p>
+        <p style="font-weight: bold;">Contact:</p>
+        <p>Seller: {{auction.user.username}}</p>
+        <p>Location: {{auction.city}}</p>
         <p>Phone number: {{auction.user.phone}}</p>
     </div>
+
 </div>
 
 <div class="auction-description">
-    <h2>
+    <h1>
         Auction description:
-    </h2>
+    </h1>
     <p>
         {{auction.description}}
     </p>
