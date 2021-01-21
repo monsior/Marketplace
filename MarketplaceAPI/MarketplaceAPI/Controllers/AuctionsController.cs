@@ -32,7 +32,8 @@ namespace MarketplaceAPI.Controllers
                 CategoryId = auctionForAdd.CategoryId,
                 Description = auctionForAdd.Description,
                 Price = auctionForAdd.Price,
-                City = auctionForAdd.City
+                City = auctionForAdd.City,
+                UserId = auctionForAdd.UserId
             };
 
             await _repository.Add(createdAuction);

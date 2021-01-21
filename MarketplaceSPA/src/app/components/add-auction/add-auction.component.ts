@@ -3,6 +3,7 @@ import { AuctionService } from 'src/app/services/auction.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { Auction } from 'src/app/models/auction';
 import { Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-add-auction',
@@ -14,6 +15,7 @@ export class AddAuctionComponent implements OnInit {
   auction: Auction = {
     name: '',
     categoryId: null,
+    userId: jwt_decode(localStorage.getItem('token'))['nameid'],
     description: '',
     price: null,
     city: ''
@@ -32,10 +34,11 @@ export class AddAuctionComponent implements OnInit {
     ){}
 
   ngOnInit(): void {
-    this.getCategories()
+    this.getCategories();    
   }
 
   onSubmit(){    
+    
     this.addAuction(this.auction);
   }
 

@@ -5,10 +5,10 @@
         <tbody>
             <tr>
                 <td width="150" rowspan=2>
-                    <img src={{auction.photos[0].url}} width="150" class="">
+                    <img class="auction-img" src={{auction.photos[0].url}} width="150">
                 </td>
                 <td valign="top" class="auction-name">
-                    {{auction.name}}
+                    <a href="auctions/{{auction.id}}">{{auction.name}}</a>
                 </td>
                 <td class="text-right auction-price" valign="top">
                     {{auction.price}} zł

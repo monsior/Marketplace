@@ -18,6 +18,10 @@ export class AuctionService {
     return this.http.get(this.baseUrl + `category/${categoryId}`);
   }
 
+  getAuction(auctionId: number) {
+    return this.http.get(this.baseUrl + `${auctionId}`);
+  }
+
   addPhoto(photo: FormData, auctionId: number) {
     return this.http.post(this.baseUrl + `${auctionId}/photos`, photo); 
   }

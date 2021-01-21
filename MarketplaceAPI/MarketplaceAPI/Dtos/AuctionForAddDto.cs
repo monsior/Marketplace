@@ -10,6 +10,7 @@ namespace MarketplaceAPI.Dtos
         public string Name { get; set; }
         public DateTime AddDate { get; set; }
         public int CategoryId { get; set; }
+        public int UserId { get; set; }
         public string Description { get; set; }
         public string Price { get; set; }
         public string City { get; set; }

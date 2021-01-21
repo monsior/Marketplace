@@ -9,6 +9,7 @@ namespace MarketplaceAPI.Models
     {
         public int Id { get; set; }
         public string Username { get; set; }
+        public string Phone { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public virtual ICollection<Auction> Auctions { get; set; }

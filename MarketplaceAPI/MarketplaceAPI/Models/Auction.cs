@@ -24,6 +24,8 @@ namespace MarketplaceAPI.Models
         public DateTime AddDate { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+        public int UserId { get; set; }
+        public virtual User User { get; set; }
         public string Description { get; set; }
         public string City { get; set; }
         public string Price { get; set; }

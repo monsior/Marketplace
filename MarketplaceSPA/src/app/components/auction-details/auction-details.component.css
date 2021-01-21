@@ -1,0 +1,31 @@
+.auction-img {
+    display: inline-block;
+    padding: 1em;
+    background-color: white;
+}
+
+.right-column {
+    display: inline-block;
+}
+
+.user-details {
+    background-color: white;
+    padding: 1em;
+    margin-left: 2em;
+    margin-top: 1em;
+    vertical-align: top;
+}
+
+.auction-details {
+    background-color: white;
+    padding: 1em;
+    margin-left: 2em;
+    vertical-align: top;
+}
+
+.auction-description {
+    text-align: justify;
+    background-color: white;
+    padding: 1em;
+    margin-top: 1em;
+}

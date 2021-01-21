@@ -1,11 +1,15 @@
 .auction {
-    background-color: #fff;
-    padding: 1em;
+    background-color: #ffffff;
+    padding: 0.5em;
     margin-bottom: 1em;
 }
 
 .auction-name {
     font-size: 28px;
+}
+
+.auction-img {
+    padding-right: 1em;
 }
 
 .auction-price {
