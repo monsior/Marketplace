@@ -48,7 +48,12 @@ namespace MarketplaceAPI.Controllers
 
             var uploadResult = new ImageUploadResult();
 
-            if (file.Length > 0)
+            if (file == null)
+            {
+                return StatusCode(422);
+            }
+
+            else if (file.Length > 0)
             {
                 using (var stream = file.OpenReadStream())
                 {

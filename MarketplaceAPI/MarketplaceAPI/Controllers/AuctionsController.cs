@@ -18,8 +18,6 @@ namespace MarketplaceAPI.Controllers
     [EnableCors]
     public class AuctionsController : BaseController<Auction, IAuctionsRepository>
     {
-        private readonly PhotosRepository _photosRepository;
-
         public AuctionsController(IAuctionsRepository auctionsRepository) : base(auctionsRepository) {}
 
         [HttpPost]
