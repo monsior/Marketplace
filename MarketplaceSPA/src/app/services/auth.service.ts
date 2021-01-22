@@ -13,12 +13,16 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(model: any) {
-    return this.http.post(this.baseUrl + 'login', model).pipe(
+  register(user: any){
+    return this.http.post(this.baseUrl + 'register', user);
+  }
+
+  login(user: any) {
+    return this.http.post(this.baseUrl + 'login', user).pipe(
       map((response: any) => {
-        const user = response;
-        if (user) {
-          localStorage.setItem('token', user.token);
+        const resp = response;
+        if (resp) {
+          localStorage.setItem('token', resp.token);
         }
       })
     )

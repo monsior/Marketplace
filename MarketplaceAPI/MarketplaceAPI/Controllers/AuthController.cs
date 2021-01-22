@@ -38,7 +38,8 @@ namespace MarketplaceAPI.Controllers
 
             var userToCreate = new User
             {
-                Username = userForRegisterDto.Username
+                Username = userForRegisterDto.Username,
+                Phone = userForRegisterDto.Phone
             };
 
             var createdUser = await _repository.Register(userToCreate, userForRegisterDto.Password);

@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  model: any = {};
+  user: any = {};
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
   login(){
-    this.authService.login(this.model)
+    this.authService.login(this.user)
       .subscribe(() => this.router.navigate(['']));
   }
 

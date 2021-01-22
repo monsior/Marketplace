@@ -1,0 +1,19 @@
+<form (ngSubmit)="register()" #loginForm="ngForm">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input [(ngModel)]="user.username" required name="username" id="username" type="text" class="form-control" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input [(ngModel)]="user.phone" required name="phone" id="phone" type="tel" maxlength="9" class="form-control" placeholder="Phone number">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input [(ngModel)]="user.password" required name="password" id="password" type="password" class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="repeat-password">Repeat password</label>
+        <input required name="repeat-password" id="repeat-password" type="password" class="form-control" placeholder="Repeat password">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
