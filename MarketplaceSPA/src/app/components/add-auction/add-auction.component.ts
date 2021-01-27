@@ -4,6 +4,7 @@ import { CategoryService } from 'src/app/services/category.service';
 import { Auction } from 'src/app/models/auction';
 import { Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-add-auction',
@@ -23,6 +24,8 @@ export class AddAuctionComponent implements OnInit {
   photo: File = null;
   auctionId: number;
 
+  formGroup: FormGroup;
+
   onFileSelected(event) {
     this.photo = event.target.files[0];
   }
@@ -35,10 +38,30 @@ export class AddAuctionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories();    
+
+    this.formGroup = new FormGroup({
+      name: new FormControl('', [
+        Validators.required
+      ]),
+      city: new FormControl('', [
+        Validators.required
+      ]),
+      category: new FormControl('', [
+        Validators.required
+      ]),
+      price: new FormControl('', [
+        Validators.required
+      ]),
+      description: new FormControl('', [
+        Validators.required
+      ]),
+      image: new FormControl('', [
+        Validators.required
+      ]),
+    });
   }
 
   onSubmit(){    
-    
     this.addAuction(this.auction);
   }
 
@@ -54,7 +77,6 @@ export class AddAuctionComponent implements OnInit {
         this.addPhoto(formData, response['id']);
         this.router.navigate(['']);
       });
-    
   }
 
   addPhoto(formData: FormData, auctionId: number){
