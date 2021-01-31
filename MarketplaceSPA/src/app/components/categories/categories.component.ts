@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  categories: any;
+  categories: Category[];
 
   constructor(private categoryService: CategoryService) { }
 

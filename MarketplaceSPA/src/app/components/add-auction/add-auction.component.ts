@@ -5,6 +5,7 @@ import { Auction } from 'src/app/models/auction';
 import { Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'app-add-auction',
@@ -12,7 +13,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./add-auction.component.css']
 })
 export class AddAuctionComponent implements OnInit {
-  categories: any;
+  categories: Category[];
   auction: Auction = {
     name: '',
     categoryId: null,
