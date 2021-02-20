@@ -12,7 +12,7 @@
 Application for placing local auctions. I created this application to train myself in .net and learn the basics of Angular.
 
 ## Screenshots
-![Example screenshot](https://ibb.co/1KFRhWk)
+![Example screenshot](images/categoryView.png)
 
 ## Technologies
 * .NET Core - version 5.0
