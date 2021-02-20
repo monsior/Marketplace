@@ -2,7 +2,6 @@
 
 ## Table of contents
 * [Description](#description)
-* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Status](#status)
@@ -10,9 +9,6 @@
 
 ## Description
 Application for placing local auctions. I created this application to train myself in .net and learn the basics of Angular.
-
-## Screenshots
-![Example screenshot](images/categoryView.png)
 
 ## Technologies
 * .NET Core - version 5.0
