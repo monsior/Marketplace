@@ -19,21 +19,21 @@ namespace MarketplaceAPI.Controllers
     [EnableCors]
     public class AuctionsController : BaseController<Auction, IAuctionsRepository>
     {
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
 
-        public AuctionsController(IAuctionsRepository auctionsRepository, IMapper mapper) : base(auctionsRepository)
+        public AuctionsController(IAuctionsRepository repository, IMapper mapper) : base(repository)
         {
-            this.mapper = mapper;
+            _mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(AuctionForAddDto auctionForAdd)
+        public async Task<IActionResult> Add(AuctionForAddDto auctionDto)
         {
-            var createdAuction = mapper.Map<Auction>(auctionForAdd);
+            var auction = _mapper.Map<Auction>(auctionDto);
 
-            await _repository.Add(createdAuction);
+            await _repository.Add(auction);
 
-            return Ok(createdAuction);
+            return Ok();
         }
 
         [HttpGet("category/{categoryId}")]

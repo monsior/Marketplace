@@ -1,4 +1,5 @@
-﻿using MarketplaceAPI.Data;
+﻿using AutoMapper;
+using MarketplaceAPI.Data;
 using MarketplaceAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;

@@ -1,4 +1,5 @@
-﻿using MarketplaceAPI.Data;
+﻿using AutoMapper;
+using MarketplaceAPI.Data;
 using MarketplaceAPI.Dtos;
 using MarketplaceAPI.Models;
 using Microsoft.AspNetCore.Http;
@@ -14,19 +15,21 @@ namespace MarketplaceAPI.Controllers
     [ApiController]
     public class CategoriesController : BaseController<Category, ICategoriesRepository>
     {
-        public CategoriesController(ICategoriesRepository repository) : base(repository){}
+        private readonly IMapper _mapper;
+
+        public CategoriesController(ICategoriesRepository repository, IMapper mapper) : base(repository)
+        {
+            _mapper = mapper;
+        }
 
         // POST: api/[controller]
         [HttpPost]
-        public  async Task<IActionResult> Add(CategoryForAddDto categoryForAdd)
+        public  async Task<IActionResult> Add(CategoryForAddDto categoryDto)
         {
-            var createdCategory = new Category
-            {
-                Name = categoryForAdd.Name
-            };
+            var category = _mapper.Map<Category>(categoryDto);
 
-            await _repository.Add(createdCategory);
-            return Ok(createdCategory);
+            await _repository.Add(category);
+            return Ok();
         }
     }
 }
