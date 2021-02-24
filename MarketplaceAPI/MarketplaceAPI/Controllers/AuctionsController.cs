@@ -1,4 +1,5 @@
-﻿using MarketplaceAPI.Data;
+﻿using AutoMapper;
+using MarketplaceAPI.Data;
 using MarketplaceAPI.Dtos;
 using MarketplaceAPI.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -18,21 +19,17 @@ namespace MarketplaceAPI.Controllers
     [EnableCors]
     public class AuctionsController : BaseController<Auction, IAuctionsRepository>
     {
-        public AuctionsController(IAuctionsRepository auctionsRepository) : base(auctionsRepository) {}
+        private readonly IMapper mapper;
+
+        public AuctionsController(IAuctionsRepository auctionsRepository, IMapper mapper) : base(auctionsRepository)
+        {
+            this.mapper = mapper;
+        }
 
         [HttpPost]
         public async Task<IActionResult> Add(AuctionForAddDto auctionForAdd)
         {
-            var createdAuction = new Auction()
-            {
-                Name = auctionForAdd.Name,
-                AddDate = auctionForAdd.AddDate,
-                CategoryId = auctionForAdd.CategoryId,
-                Description = auctionForAdd.Description,
-                Price = auctionForAdd.Price,
-                City = auctionForAdd.City,
-                UserId = auctionForAdd.UserId
-            };
+            var createdAuction = mapper.Map<Auction>(auctionForAdd);
 
             await _repository.Add(createdAuction);
 

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "V8oqttCtwNSN99zMjYw2WYRwO0lFxIclPL1Q78Z+1p1dshybz83AKp21B3pUnuX7PW1TPbdfYzLiCMuZkE2B6g==",
+  "dgSpecHash": "s4KYDYi+BnNpTZG9JN0bgiGwaHS7ZFghOud1TRqTpv/iNENFVwM6gBuKVpS3I+TvcgHpmOxmVzJ46ffKkgt28g==",
   "success": true,
   "projectFilePath": "C:\\Users\\monsi\\OneDrive\\Pulpit\\Programowanie\\Marketplace\\MarketplaceAPI\\MarketplaceTests\\MarketplaceTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\monsi\\.nuget\\packages\\autofixture\\4.15.0\\autofixture.4.15.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\autofixture.xunit2\\4.15.0\\autofixture.xunit2.4.15.0.nupkg.sha512",
+    "C:\\Users\\monsi\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\monsi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\cloudinarydotnet\\1.14.0\\cloudinarydotnet.1.14.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
@@ -157,7 +159,7 @@
     "C:\\Users\\monsi\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\monsi\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\monsi\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
