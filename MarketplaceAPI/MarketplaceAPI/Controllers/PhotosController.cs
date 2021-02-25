@@ -40,7 +40,7 @@ namespace MarketplaceAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddPhotoToAuction(int auctionId, [FromForm] PhotoForAddDto photoForAdd)
+        public async Task<IActionResult> AddPhotoToAuction(int auctionId, [FromForm] PhotoDto photoForAdd)
         {
             var auction = await _auctionsRepository.Get(auctionId);
 

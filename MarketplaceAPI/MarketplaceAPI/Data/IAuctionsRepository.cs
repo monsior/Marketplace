@@ -1,4 +1,5 @@
-﻿using MarketplaceAPI.Models;
+﻿using MarketplaceAPI.Dtos;
+using MarketplaceAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

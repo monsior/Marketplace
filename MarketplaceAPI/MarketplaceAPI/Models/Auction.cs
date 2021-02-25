@@ -12,6 +12,7 @@ namespace MarketplaceAPI.Models
 
         public Auction()
         {
+            AddDate = DateTime.Now;
         }
 
         public int Id { get; set; }

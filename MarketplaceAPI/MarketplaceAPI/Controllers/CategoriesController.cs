@@ -24,7 +24,7 @@ namespace MarketplaceAPI.Controllers
 
         // POST: api/[controller]
         [HttpPost]
-        public  async Task<IActionResult> Add(CategoryForAddDto categoryDto)
+        public  async Task<IActionResult> Add(CategoryDto categoryDto)
         {
             var category = _mapper.Map<Category>(categoryDto);
 

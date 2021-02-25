@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarketplaceAPI.Data
 {
-    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly AppDbContext _context;
 

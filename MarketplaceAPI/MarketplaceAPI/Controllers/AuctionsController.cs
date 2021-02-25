@@ -27,7 +27,7 @@ namespace MarketplaceAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(AuctionForAddDto auctionDto)
+        public async Task<IActionResult> Add(AuctionDto auctionDto)
         {
             var auction = _mapper.Map<Auction>(auctionDto);
 

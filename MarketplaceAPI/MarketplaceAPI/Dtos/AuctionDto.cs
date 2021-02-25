@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MarketplaceAPI.Dtos
 {
-    public class AuctionForAddDto
+    public class AuctionDto
     {
         public string Name { get; set; }
         public DateTime AddDate { get; set; }
@@ -14,10 +14,5 @@ namespace MarketplaceAPI.Dtos
         public string Description { get; set; }
         public string Price { get; set; }
         public string City { get; set; }
-
-        public AuctionForAddDto()
-        {
-            AddDate = DateTime.Now;
-        }
     }
 }

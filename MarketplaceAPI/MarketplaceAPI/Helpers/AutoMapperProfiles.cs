@@ -12,8 +12,8 @@ namespace MarketplaceAPI.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<AuctionForAddDto, Auction>();
-            CreateMap<CategoryForAddDto, Category>();
+            CreateMap<AuctionDto, Auction>();
+            CreateMap<CategoryDto, Category>();
         }
     }
 }
