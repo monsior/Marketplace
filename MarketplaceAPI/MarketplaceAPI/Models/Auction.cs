@@ -9,15 +9,9 @@ namespace MarketplaceAPI.Models
 {
     public class Auction : IEntity
     {
-        private readonly ILazyLoader _lazyLoader;
 
         public Auction()
         {
-        }
-
-        public Auction(ILazyLoader lazyLoader)
-        {
-            _lazyLoader = lazyLoader;
         }
 
         public int Id { get; set; }
@@ -44,13 +38,6 @@ namespace MarketplaceAPI.Models
         [Range(0, 999999999)]
         public string Price { get; set; }
         [Required]
-        private List<Photo> _photos;
-        [Required]
-        public virtual List<Photo> Photos
-        {
-            get => _lazyLoader.Load(this, ref _photos);
-            set => _photos = value;
-        }
-
+        public virtual List<Photo> Photos { get; set; }
     }
 }

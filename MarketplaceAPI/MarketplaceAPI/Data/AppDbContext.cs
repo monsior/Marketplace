@@ -16,9 +16,5 @@ namespace MarketplaceAPI.Data
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Category> Categories { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseLazyLoadingProxies();
-        }
     }
 }

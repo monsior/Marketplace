@@ -41,5 +41,11 @@ namespace MarketplaceAPI.Controllers
         {
             return Ok(await _repository.GetByCategory(categoryId));
         }
+        
+        [HttpGet("page/{pageNumber}")]
+        public async Task<ActionResult<IEnumerable<Auction>>> GetByPage(int pageNumber)
+        {
+            return Ok(await _repository.GetAll(pageNumber));
+        }
     }
 }

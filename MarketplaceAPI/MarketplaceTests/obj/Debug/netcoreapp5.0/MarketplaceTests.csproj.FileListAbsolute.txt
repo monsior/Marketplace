@@ -246,3 +246,5 @@ C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\Marketpl
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Proxies.dll
 C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\Newtonsoft.Json.Bson.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\AutoMapper.dll
+C:\Users\monsi\OneDrive\Pulpit\Programowanie\Marketplace\MarketplaceAPI\MarketplaceTests\bin\Debug\netcoreapp5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

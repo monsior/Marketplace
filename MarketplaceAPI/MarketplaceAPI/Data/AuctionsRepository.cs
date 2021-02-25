@@ -17,5 +17,13 @@ namespace MarketplaceAPI.Data
                 
             return auctions;
         }
+
+        public async Task<IEnumerable<Auction>> GetAll(int pageNumber, int pageSize)
+        {
+            return await _context.Set<Auction>()
+                .Skip((pageNumber*pageSize)-pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
     }
 }

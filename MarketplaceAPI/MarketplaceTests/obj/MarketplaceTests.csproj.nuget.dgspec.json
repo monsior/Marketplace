@@ -77,10 +77,6 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
-            "Microsoft.EntityFrameworkCore.Proxies": {
-              "target": "Package",
-              "version": "[5.0.1, )"
-            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.1, )"
@@ -181,14 +177,6 @@
         "net5.0": {
           "targetAlias": "netcoreapp5.0",
           "dependencies": {
-            "AutoFixture": {
-              "target": "Package",
-              "version": "[4.15.0, )"
-            },
-            "AutoFixture.Xunit2": {
-              "target": "Package",
-              "version": "[4.15.0, )"
-            },
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.1.1, )"
@@ -198,10 +186,6 @@
               "version": "[1.14.0, )"
             },
             "Microsoft.AspNetCore.TestHost": {
-              "target": "Package",
-              "version": "[5.0.1, )"
-            },
-            "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[5.0.1, )"
             },
