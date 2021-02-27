@@ -17,35 +17,45 @@ namespace MarketplaceAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors]
-    public class AuctionsController : BaseController<Auction, IAuctionsRepository>
+    public class AuctionsController : BaseController<Auction, AuctionDto, IAuctionsRepository>
     {
-        private readonly IMapper _mapper;
+        private readonly IAuctionsRepository _repository;
+        private IMapper _mapper;
 
-        public AuctionsController(IAuctionsRepository repository, IMapper mapper) : base(repository)
+        public AuctionsController(IAuctionsRepository repository, IMapper mapper) : base(repository, mapper)
         {
+            _repository = repository;
             _mapper = mapper;
         }
-
-        [HttpPost]
-        public async Task<IActionResult> Add(AuctionDto auctionDto)
+        
+        [HttpGet("page/{pageNumber}")]
+        public async Task<ActionResult<IEnumerable<AuctionDto>>> GetByPage(int pageNumber)
         {
-            var auction = _mapper.Map<Auction>(auctionDto);
+            var auctions = await _repository.GetAll(pageNumber);
 
-            await _repository.Add(auction);
+            var auctionsDto = _mapper.Map<IEnumerable<AuctionDto>>(auctions);
 
-            return Ok();
+            return Ok(auctionsDto);
         }
 
         [HttpGet("category/{categoryId}")]
         public async Task<IActionResult> GetByCategory(int categoryId)
         {
-            return Ok(await _repository.GetByCategory(categoryId));
+            var auctions = await _repository.GetByCategory(categoryId);
+
+            var auctionsDto = _mapper.Map<IEnumerable<AuctionDto>>(auctions);
+
+            return Ok(auctionsDto);
         }
-        
-        [HttpGet("page/{pageNumber}")]
-        public async Task<ActionResult<IEnumerable<Auction>>> GetByPage(int pageNumber)
+
+        [HttpGet("user/{userId}")]
+        public async Task<IActionResult> GetByUser(int userId)
         {
-            return Ok(await _repository.GetAll(pageNumber));
+            var auctions = await _repository.GetByUser(userId);
+
+            var auctionsDto = _mapper.Map<IEnumerable<AuctionDto>>(auctions);
+
+            return Ok(auctionsDto);
         }
     }
 }

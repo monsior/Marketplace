@@ -16,29 +16,45 @@ namespace MarketplaceAPI.Controllers
     [EnableCors]
     [Route("api/[controller]")]
     [ApiController]
-    public abstract class BaseController<TEntity, TRepository> : ControllerBase
-        where TEntity : class, IEntity
+    public abstract class BaseController<TEntity, TDto, TRepository> : ControllerBase
+        where TEntity : class
+        where TDto : class
         where TRepository : IBaseRepository<TEntity>
     {
-        protected readonly TRepository _repository;
+        private readonly TRepository _repository;
+        private IMapper _mapper;
 
-        public BaseController(TRepository repository)
+        public BaseController(TRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(TDto dto)
+        {
+            var entity = _mapper.Map<TEntity>(dto);
+
+            await _repository.Add(entity);
+
+            return Ok();
         }
 
         // GET: api/[controller]
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult<IEnumerable<TEntity>>> Get()
+        public async Task<ActionResult<IEnumerable<TDto>>> Get()
         {
-            return Ok(await _repository.GetAll());
+            var entities = await _repository.GetAll();
+            var dto = _mapper.Map<IEnumerable<TDto>>(entities);
+
+            return Ok(dto);
         }
 
         // GET: api/[controller]/5
         [HttpGet("{id}")]
         [AllowAnonymous]
-        public async Task<ActionResult<TEntity>> Get(int id)
+        public async Task<ActionResult<TDto>> Get(int id)
         {
             var entity = await _repository.Get(id);
 
@@ -47,7 +63,9 @@ namespace MarketplaceAPI.Controllers
                 return NotFound();
             }
 
-            return Ok(entity);
+            var dto = _mapper.Map<TDto>(entity);
+
+            return Ok(dto);
         }
 
     }

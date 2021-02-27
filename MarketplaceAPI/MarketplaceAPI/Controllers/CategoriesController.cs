@@ -13,23 +13,8 @@ namespace MarketplaceAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : BaseController<Category, ICategoriesRepository>
+    public class CategoriesController : BaseController<Category, CategoryDto, ICategoriesRepository>
     {
-        private readonly IMapper _mapper;
-
-        public CategoriesController(ICategoriesRepository repository, IMapper mapper) : base(repository)
-        {
-            _mapper = mapper;
-        }
-
-        // POST: api/[controller]
-        [HttpPost]
-        public  async Task<IActionResult> Add(CategoryDto categoryDto)
-        {
-            var category = _mapper.Map<Category>(categoryDto);
-
-            await _repository.Add(category);
-            return Ok();
-        }
+        public CategoriesController(ICategoriesRepository repository, IMapper mapper) : base(repository, mapper){}
     }
 }

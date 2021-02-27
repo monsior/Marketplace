@@ -12,7 +12,7 @@ namespace MarketplaceAPI.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<AuctionDto, Auction>();
+            CreateMap<AuctionDto, Auction>().ReverseMap();
             CreateMap<CategoryDto, Category>();
         }
     }
