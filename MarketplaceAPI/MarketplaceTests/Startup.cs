@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MarketplaceAPI.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace MarketplaceTests
 {
@@ -13,6 +14,7 @@ namespace MarketplaceTests
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ICategoriesRepository, CategoriesRepository>();
+            services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("TestDb"));
         }
     }
 }

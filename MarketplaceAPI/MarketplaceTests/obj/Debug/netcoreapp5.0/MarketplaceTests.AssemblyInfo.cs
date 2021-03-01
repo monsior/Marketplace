@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-//[assembly: Xunit.TestFramework("Xunit.DependencyInjection.DependencyInjectionTestFramework", "Xunit.DependencyInjection")]
+[assembly: Xunit.TestFramework("Xunit.DependencyInjection.DependencyInjectionTestFramework", "Xunit.DependencyInjection")]
 [assembly: Xunit.DependencyInjection.StartupType("MarketplaceTests.Startup")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarketplaceTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
