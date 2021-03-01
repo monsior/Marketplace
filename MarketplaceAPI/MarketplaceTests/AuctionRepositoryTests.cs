@@ -17,9 +17,27 @@ using Xunit;
 namespace MarketplaceTests
 {
 
-    public class AuctionRepositoryTests 
+    public class AuctionRepositoryTests
     {
         private Faker<Auction> testAuction { get; set; }
+
+        private List<Auction> Populate(int items)
+        {
+            List<Auction> auctions = new List<Auction>();
+
+            for (int i = 0; i < items; i++)
+            {
+                auctions.Add(testAuction.Generate());
+            }
+
+            return auctions;
+        }
+
+        private async Task AddToInMemory(IEnumerable<Auction> auctions, IAuctionsRepository sut)
+        {
+            auctions.ToList().ForEach(async auction => { await sut.Add(auction); });
+            await sut.SaveAll();
+        }
 
         private IAuctionsRepository GetInMemoryAuctionRepository()
         {
@@ -50,21 +68,58 @@ namespace MarketplaceTests
             // Arrange
             IAuctionsRepository sut = GetInMemoryAuctionRepository();
 
-            IEnumerable<Auction> auctions = new List<Auction>()
-            {
-                testAuction.Generate(),
-                testAuction.Generate(),
-                testAuction.Generate(),
-                testAuction.Generate(),
-            };
+            IEnumerable<Auction> auctions = Populate(4);
 
             IEnumerable<Auction> expected = auctions.ToList().GetRange(2, 2);
 
-            auctions.ToList().ForEach(async auction => {await sut.Add(auction);});
-            await sut.SaveAll();
+            await AddToInMemory(auctions, sut);
 
             // Act
             IEnumerable<Auction> actual = await sut.GetAll(2, 2);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public async void GetByCategory_ShouldWork()
+        {
+            // Arrange
+            IAuctionsRepository sut = GetInMemoryAuctionRepository();
+
+            IEnumerable<Auction> auctions = Populate(4);
+
+            auctions.ToList().ForEach(a => a.CategoryId = 1);
+            auctions.ToList().First().CategoryId = 0;
+
+            IEnumerable<Auction> expected = auctions.ToList().GetRange(1, 3);
+
+            await AddToInMemory(auctions, sut);
+
+            // Act
+            IEnumerable<Auction> actual = await sut.GetByCategory(1);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public async void GetByUser_ShouldWork()
+        {
+            // Arrange
+            IAuctionsRepository sut = GetInMemoryAuctionRepository();
+
+            IEnumerable<Auction> auctions = Populate(4);
+
+            auctions.ToList().ForEach(a => a.UserId = 1);
+            auctions.ToList().First().UserId = 0;
+
+            IEnumerable<Auction> expected = auctions.ToList().GetRange(1, 3);
+
+            await AddToInMemory(auctions, sut);
+
+            // Act
+            IEnumerable<Auction> actual = await sut.GetByUser(1);
 
             // Assert
             Assert.Equal(expected, actual);
