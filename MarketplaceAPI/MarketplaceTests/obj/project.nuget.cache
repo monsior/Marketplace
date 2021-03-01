@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "c+58YLM72KvHBRo81AI/mkmceDGqLRY+CX10WO+6s5bMbYktjrnc1+C3n/i3dLX8kRnCWiBVNlPz+oAkw9O5Yg==",
+  "dgSpecHash": "lyFWgSKUsUAA3K1SO5dxhfpo18UpY4pKck18A+DKngtNIRJmoRUI83OAN01uel5ni6prnXMm1kok87VOv9aKuA==",
   "success": true,
   "projectFilePath": "C:\\Users\\monsi\\OneDrive\\Pulpit\\Programowanie\\Marketplace\\MarketplaceAPI\\MarketplaceTests\\MarketplaceTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\monsi\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\monsi\\.nuget\\packages\\bogus\\33.0.2\\bogus.33.0.2.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\cloudinarydotnet\\1.14.0\\cloudinarydotnet.1.14.0.nupkg.sha512",
     "C:\\Users\\monsi\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",

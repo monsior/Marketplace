@@ -181,6 +181,10 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
+            "Bogus": {
+              "target": "Package",
+              "version": "[33.0.2, )"
+            },
             "CloudinaryDotNet": {
               "target": "Package",
               "version": "[1.14.0, )"

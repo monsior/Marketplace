@@ -21,8 +21,6 @@ namespace MarketplaceAPI.Data
         public async Task<IEnumerable<Auction>> GetByCategory(int categoryId)
         {
             var auctions = await _context.Auctions.Where(a => a.CategoryId == categoryId).ToListAsync();
-            //var auctions = await GetAll(pageNumber, pageSize);
-            //var categoryAuctions = auctions.Where(a => a.Category.Id == categoryId);
 
             return auctions;
         }

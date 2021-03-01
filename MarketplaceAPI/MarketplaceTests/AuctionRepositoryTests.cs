@@ -1,4 +1,5 @@
-﻿using MarketplaceAPI.Controllers;
+﻿using Bogus;
+using MarketplaceAPI.Controllers;
 using MarketplaceAPI.Data;
 using MarketplaceAPI.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -13,29 +14,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-//[assembly: TestFramework("MarketplaceAPI.Startup", "MarketplaceAPI")]
 namespace MarketplaceTests
 {
 
     public class AuctionRepositoryTests 
     {
-        private void Seed(AppDbContext context)
-        {
-            Auction auction = new Auction()
-            {
-                Id = 0,
-                Name = "test",
-                AddDate = DateTime.Now,
-                CategoryId = 0,
-                UserId = 0,
-                Description = "testt",
-                City = "testtt",
-                Price = "5"
-            };
-
-            context.AddRange(auction);
-            context.SaveChanges();
-        }
+        private Faker<Auction> testAuction { get; set; }
 
         private IAuctionsRepository GetInMemoryAuctionRepository()
         {
@@ -46,33 +30,44 @@ namespace MarketplaceTests
             AppDbContext dbContext = new AppDbContext(options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
+
+            testAuction = new Faker<Auction>()
+                .RuleFor(a => a.Name, a => a.Vehicle.Model())
+                // Gets a date from last 5 days
+                .RuleFor(a => a.AddDate, a => a.Date.Recent(5))
+                .RuleFor(a => a.CategoryId, a => a.Random.Int(0, 10))
+                .RuleFor(a => a.UserId, a => a.Random.Int(0, 10))
+                .RuleFor(a => a.Description, a => a.Lorem.Sentences(5))
+                .RuleFor(a => a.City, a => a.Address.City())
+                .RuleFor(a => a.Price, a => a.Random.Int(5000, 300000).ToString());
+
             return new AuctionsRepository(dbContext);
         }
 
-
         [Fact]
-        public async Task Add_ShouldWork()
+        public async void GetPaginated_ShouldWork()
         {
+            // Arrange
             IAuctionsRepository sut = GetInMemoryAuctionRepository();
-            Auction expected = new Auction()
+
+            IEnumerable<Auction> auctions = new List<Auction>()
             {
-                Id = 0,
-                Name = "test2",
-                AddDate = DateTime.Now,
-                CategoryId = 0,
-                UserId = 0,
-                Description = "testt",
-                City = "testtt",
-                Price = "5"
+                testAuction.Generate(),
+                testAuction.Generate(),
+                testAuction.Generate(),
+                testAuction.Generate(),
             };
 
-            await sut.Add(expected);
+            IEnumerable<Auction> expected = auctions.ToList().GetRange(2, 2);
+
+            auctions.ToList().ForEach(async auction => {await sut.Add(auction);});
             await sut.SaveAll();
 
-            Auction actual = await sut.Get(-1);
+            // Act
+            IEnumerable<Auction> actual = await sut.GetAll(2, 2);
 
+            // Assert
             Assert.Equal(expected, actual);
-
         }
     }
 }

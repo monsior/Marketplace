@@ -9,6 +9,7 @@
       "MarketplaceTests/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "Bogus": "33.0.2",
           "CloudinaryDotNet": "1.14.0",
           "MarketplaceAPI": "1.0.0",
           "Microsoft.AspNetCore.TestHost": "5.0.1",
@@ -46,6 +47,14 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.1.1.0"
+          }
+        }
+      },
+      "Bogus/33.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Bogus.dll": {
+            "assemblyVersion": "33.0.2.0",
+            "fileVersion": "33.0.2.0"
           }
         }
       },
@@ -2498,6 +2507,13 @@
       "sha512": "sha512-xSWoVzOipuDU4PeZcUfaZQ+xqXU8QmGv5jrdlxt3MYm9xaOmrefqcfzGQ3SQ+D+8wfBa/ZwSuL0qKOVj080inA==",
       "path": "automapper.extensions.microsoft.dependencyinjection/8.1.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512"
+    },
+    "Bogus/33.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-92CcSgl7KLEw7lerMytjY504IPnhmYqDkCgIPm5GVfiZPslRWUcgWvtoNYhKbSU4m/Ms7giKP8OxPAFTFBgC3w==",
+      "path": "bogus/33.0.2",
+      "hashPath": "bogus.33.0.2.nupkg.sha512"
     },
     "Castle.Core/4.4.0": {
       "type": "package",
